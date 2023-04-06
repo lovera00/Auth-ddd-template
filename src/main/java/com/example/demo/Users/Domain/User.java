@@ -15,12 +15,6 @@ public class User extends AggregateRoot {
         this.email = email;
     }
 
-    private User() {
-        this.id = null;
-        this.username = null;
-        this.email = null;
-    }
-
     public static User create(UserId id, UserUsername username, EmailUser email) {
         User user = new User(id, username, email);
         user.record(new UserCreatedDomainEvent(id.value(), username.value(), email.value()));
