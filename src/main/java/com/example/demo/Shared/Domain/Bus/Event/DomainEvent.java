@@ -1,5 +1,7 @@
 package com.example.demo.Shared.Domain.Bus.Event;
 
+
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.HashMap;
