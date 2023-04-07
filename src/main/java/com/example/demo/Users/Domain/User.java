@@ -8,18 +8,20 @@ import java.util.Objects;
 public class User extends AggregateRoot {
     private UserId id;
     private UserUsername username;
-    private EmailUser email;
-    public User(UserId id, UserUsername username, EmailUser email) {
+    private UserEmail email;
+    public User(UserId id, UserUsername username, UserEmail email) {
         this.id = id;
         this.username = username;
         this.email = email;
     }
 
-    public static User create(UserId id, UserUsername username, EmailUser email) {
+    public static User create(UserId id, UserUsername username, UserEmail email) {
         User user = new User(id, username, email);
         user.record(new UserCreatedDomainEvent(id.value(), username.value(), email.value()));
         return user;
     }
+
+
 
     public UserId getId() {
         return id;
@@ -29,7 +31,7 @@ public class User extends AggregateRoot {
         return username;
     }
 
-    public EmailUser getEmail() {
+    public UserEmail getEmail() {
         return email;
     }
 

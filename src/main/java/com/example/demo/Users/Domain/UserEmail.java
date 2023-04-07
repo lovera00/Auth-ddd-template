@@ -2,13 +2,13 @@ package com.example.demo.Users.Domain;
 
 import com.example.demo.Shared.Domain.StringValueObject;
 
-public class EmailUser extends StringValueObject{
+public class UserEmail extends StringValueObject{
 
-    public EmailUser(String value) {
+    public UserEmail(String value) {
         super(value);
     }
 
-    public EmailUser() {
+    public UserEmail() {
         super("");
     }
 }
